@@ -58,12 +58,10 @@ Route::middleware(['auth', 'App\Http\Middleware\CheckRole:admin'])->prefix('admi
 // Auth Routes (Breeze/Fortify/etc.)
 // ----------------------------------
 
-// routes/web.php
 Route::get('/test-role', function () {
     return 'Role middleware works!';
 })->middleware('rolemiddleware:admin');
 
-// routes/web.php
 Route::get('/check-container', function() {
     try {
         app('role');
@@ -72,5 +70,7 @@ Route::get('/check-container', function() {
         return 'Role binding error: ' . $e->getMessage();
     }
 });
+
+Route::get('/health', fn() => response()->json(['status' => 'OK']));
 
 require __DIR__.'/auth.php';
