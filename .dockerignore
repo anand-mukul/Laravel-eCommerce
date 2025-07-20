@@ -5,8 +5,8 @@ yarn.lock
 
 # Laravel
 /vendor
-# /.env
-# .env.*
+/.env
+.env.*
 # /storage/*.key
 # /storage/app/public/*
 # /storage/framework/cache
