@@ -45,7 +45,7 @@ RUN groupadd -g 1000 laravel && \
 COPY --from=vite-builder --chown=laravel:laravel /app /var/www/html
 
 # Only include this if .env.production actually exists
-COPY --chown=laravel:laravel .env.production .env
+COPY --chown=laravel:laravel .env .env
 
 RUN chown -R laravel:www-data /var/www/html && \
     chmod -R 750 /var/www/html && \
